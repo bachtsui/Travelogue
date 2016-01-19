@@ -1,2 +1,21 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+  <%= f.text_field :first_name %>
+  </div>
+  <div>
+  <%= f.text_field :last_name %>
+  </div>
+  <div>
+  <%= f.text_field :current_city %>
+  </div>
+  <div>
+  <%= f.text_field :profile_photo %>
+  </div>
+  <div>
+  <%= f.password_field :password_digest %>
+  </div>
+  <%= f.submit "Save User" %>
+<% end %>
