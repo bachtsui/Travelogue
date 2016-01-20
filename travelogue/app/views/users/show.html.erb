@@ -1,8 +1,11 @@
 <h1>Users Profile</h1>
 
-<h3><%= @user.first_name %> <%= @user.last_name %></h3>
-<p><%= @user.email %></p>
-<p><%= @user.current_city %></p>
-<p><%= @user.profile_photo %></p>
+<div class = "container">
+<h3>Name: <%= @user.first_name %> <%= @user.last_name %></h3>
+<p>E-mail: <%= @user.email %></p>
+<p>Current City: <%= @user.current_city %></p>
+<p>Profile Photo: <img class="photo" src = "<%= @user.profile_photo %>" </p>
+
 <%= link_to "Edit", edit_user_path(@user.id) %>
 <%= button_to "Delete", @user, method: :delete %>
+</div>

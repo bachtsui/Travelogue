@@ -7,8 +7,32 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p id="notice"><%= notice %></p>
-<%= yield %>
 
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+<nav class="navbar navbar-default navbar-fixed-top">
+ <div class="container">
+	<ul class="nav navbar-nav">
+ 		<li><a class="navbar-brand" href="/">Travelogue</a></li>
+ 	</ul>	
+ 	<ul class="nav navbar-nav pull-right">
+		<% if current_user %>
+   			<li><%= link_to "Profile", user_path(current_user) %></li>
+   			<li><%= link_to "Log Out", destroy_session_path %></li>
+ 		<% else %>
+   			<li><%= link_to "Create Account", new_user_path %></li>
+   			<li><%= link_to "Log In", new_session_path %></li>
+ 		<% end %> 		
+<!--         <li><a href="/users">Profile</a></li>
+        <li><a href="/logout">Logout</a></li> -->
+    </ul>
+ </div>
+</nav>
+</div>
+<div class="container">
+
+<%= yield %>
+</div>
 </body>
 </html>
