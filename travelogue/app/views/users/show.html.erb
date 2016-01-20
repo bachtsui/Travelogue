@@ -9,3 +9,14 @@
 <%= link_to "Edit", edit_user_path(@user.id) %>
 <%= button_to "Delete", @user, method: :delete %>
 </div>
+
+<div class = "container">
+	<ul>
+	  <% @user.articles.each do |article| %>
+	    <li><%= article.title %></li>
+	    <li><%= article.content %></li>
+	    <%= link_to "Edit", edit_article_path(article.id) %>
+	    <%= button_to "Delete", article, method: :delete %>
+	  <% end %>
+	</ul>
+</div>
