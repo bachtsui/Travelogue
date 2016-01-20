@@ -1,7 +1,7 @@
 <h1>Users</h1>
 <% @users.each do |user| %>
   <p>
-    <strong> <%= user.first_name%> <%= user.last_name%> </strong><br>
-      <%= user.email%>
+    <strong> <%=link_to "#{user.first_name} #{user.last_name}", user_path(user.id) %> </strong><br>
+    <%= user.email%>    
   </p>
 <% end %>
