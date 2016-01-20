@@ -1,4 +1,8 @@
 <h3><%= @article.title %></h3>
+<p>Author: <%=link_to "#{@article.user.first_name} #{@article.user.last_name}", user_path(@article.user.id) %></p>
 <p><%= @article.content %></p>
-<%= link_to "Edit", edit_article_path(@article.id) %>
-<%= button_to "Delete", @article, method: :delete %>
+
+<% if current_user == @article.user %>
+	<%= link_to "Edit", edit_article_path(@article.id) %>
+	<%= button_to "Delete", @article, method: :delete %>
+<% end %>
