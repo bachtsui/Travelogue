@@ -1,7 +1,12 @@
 class SessionsController < ApplicationController
+	before_action :logged_in?, only: [:destroy]
+	before_action :logged_out?, only: [:new, :create]
 
 	def new
 		@user = User.new
+		if current_user
+			redirect_to user_path(current_user)
+		end
 	end
 
 	def create
