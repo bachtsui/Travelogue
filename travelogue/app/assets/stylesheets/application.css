@@ -19,14 +19,24 @@
 }
 
 nav {
-
 }
 
-body { padding-top: 50px; }
+body { 
+  padding-top: 50px;
+}
 
 .photo {
 	width: 75px;
 	height: 75px;
 }
 
+.form-horizontal {
+  width: 300px;
+}
 
+.form-control {
+}
+
+.control-label {
+  color: #5BC0DE;
+}
