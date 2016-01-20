@@ -14,4 +14,17 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new", as: "new_session"
   post "/sessions", to: "sessions#create"
   get "/logout", to: "sessions#destroy", as: "destroy_session"
+
+  #Routes for Articles specific to a User
+  # get "/users/:id/articles", to: "users#articles_index", as: "user_articles"
+  # may have use for later
+
+  #Routes for CRUD for Articles
+  get '/articles', to: "articles#index", as: "articles"
+  get '/articles/new', to: 'articles#new', as: "new_article"
+  post '/articles', to:'articles#create'
+  get '/articles/:id', to: 'articles#show', as: "article"
+  get '/articles/:id/edit', to: 'articles#edit', as: "edit_article"
+  patch '/articles/:id', to: 'articles#update'
+  delete '/articles/:id', to: 'articles#destroy'
 end

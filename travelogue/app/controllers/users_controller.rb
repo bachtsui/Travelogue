@@ -55,6 +55,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def articles_index
+    @user = User.find(params[:id])
+    @articles = @user.articles
+  end
+  
   private
 
   def user_params

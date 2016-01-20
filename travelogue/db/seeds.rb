@@ -1,3 +1,6 @@
+User.destroy_all
+Article.destroy_all
+
 User.create ({
   email: "bagel@isangieri.com",
   password_digest: "yoyoyo",
@@ -8,10 +11,9 @@ User.create ({
 })
 
 20.times do
-	
 	user_params = Hash.new
 	user_params[:email] = FFaker::Internet.email
-	user_params[:password]	= "123456"
+	user_params[:password]  = "123456"
 	user_params[:first_name] = FFaker::Name.first_name
 	user_params[:last_name] = FFaker::Name.last_name
 	user_params[:current_city] = FFaker::Address.city
@@ -19,4 +21,11 @@ User.create ({
 
 	new_user = User.create(user_params)
 
+	10.times do
+		new_article = Article.new
+		new_article.title = FFaker::HipsterIpsum.words(rand(8)+2).join(" ")
+		new_article.content = FFaker::HipsterIpsum.paragraphs(1+ rand(4)).join("\n")
+		new_article.save
+		new_user.articles.push new_article
+	end
 end
