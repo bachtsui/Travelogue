@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy", as: "destroy_session"
 
   #Routes for Articles specific to a User
-  get "/users/:id/articles", to: "users#articles_index", as: "user_articles"
+  # get "/users/:id/articles", to: "users#articles_index", as: "user_articles"
+  # may have use for later
 
   #Routes for CRUD for Articles
   get '/articles', to: "articles#index", as: "articles"
