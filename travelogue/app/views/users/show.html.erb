@@ -6,17 +6,31 @@
 <p>Current City: <%= @user.current_city %></p>
 <p>Profile Photo: <img class="photo" src = "<%= @user.profile_photo %>" </p>
 
-<%= link_to "Edit", edit_user_path(@user.id) %>
-<%= button_to "Delete", @user, method: :delete %>
+<% if current_user == @user %>
+	<%= link_to "Edit", edit_user_path(@user.id) %>
+	<%= button_to "Delete", @user, method: :delete %>
+<% end %>
 </div>
 
-<div class = "container">
-	<ul>
-	  <% @user.articles.each do |article| %>
-	    <li><%= article.title %></li>
-	    <li><%= article.content %></li>
-	    <%= link_to "Edit", edit_article_path(article.id) %>
-	    <%= button_to "Delete", article, method: :delete %>
-	  <% end %>
-	</ul>
-</div>
+<% if current_user == @user %>
+	<div class = "container">
+		<ul>
+		  <% @user.articles.each do |article| %>
+		    <li><%= article.title %></li>
+		    <li><%= article.content %></li>
+		    <%= link_to "Edit", edit_article_path(article.id) %>
+		    <%= button_to "Delete", article, method: :delete %>
+		  <% end %>
+		</ul>
+	</div>
+
+<% else %>
+	<div class = "container">
+		<ul>
+		  <% @user.articles.each do |article| %>
+		    <li><%= article.title %></li>
+		    <li><%= article.content %></li>
+		  <% end %>
+		</ul>
+	</div>
+<% end %>
