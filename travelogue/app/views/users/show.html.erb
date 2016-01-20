@@ -1,26 +1,28 @@
-<h1><%= @user.first_name %>'s profile</h1>
-
-<div class = "container">
-
- 	<h3><%= @user.first_name %> <%= @user.last_name %></h3>
-  <p><strong>E-mail</strong> <%= @user.email %></p>
-  <p><strong>Current City</strong> <%= @user.current_city %></p>
-  <p><strong>Join Date</strong> <%= @user.created_at.strftime("%B %-d, %Y, at %l:%M%P") %></p>
-  <p><img class="photo" src = "<%= @user.profile_photo %>" </p>
-
-<% if current_user == @user %>
-  <div class = "buttons">
-    <%= link_to "Edit", edit_user_path(@user.id) %>
-    <%= button_to "Delete", @user, method: :delete %>
+<div class="container">
+  <div>
+   	<h1 class="text-color"><%= @user.first_name %> <%= @user.last_name %></h1>
   </div>
-<% end %>
+  <div>
+    <img class="profile_photo" src = "<%= @user.profile_photo %>">
+  </div>
+  <div>
+    <p><span>E-mail</span> <span class="text-color"><%= @user.email %></span></p>
+    <p><span>Current City</span> <span class="text-color"><%= @user.current_city %></span></p>
+    <p><span>Join Date</span> <span class="text-color"><%= @user.created_at.strftime("%B %-d, %Y, at %l:%M%P") %></span></p>
+  </div>
+  <% if current_user == @user %>
+    <div class = "buttons">
+      <%= link_to "Edit", edit_user_path(@user.id) %>
+      <%= button_to "Delete", @user, method: :delete %>
+    </div>
+  <% end %>
 </div>
 
 <div class = "container">
-  <h2>Articles</h2>
+  <h2 class="text-color">Articles</h2>
     <ul>
       <% @user.articles.each do |article| %>
-        <li><strong><%= link_to article.title, article_path(article.id) %></strong></li>
+        <h3 class="text-color"><%= link_to article.title, article_path(article.id), class: "text-color" %></h3>
         <% if current_user == article.user %>
         	<div class = "button">
             <%= link_to "Edit", edit_article_path(article.id) %>
