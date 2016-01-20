@@ -25,9 +25,9 @@ body {
   padding-top: 50px;
 }
 
-.photo {
-	width: 75px;
-	height: 75px;
+.profile_photo {
+	width: 280px;
+	height: 300px;
 }
 
 .form-horizontal {
@@ -38,5 +38,9 @@ body {
 }
 
 .control-label {
-  color: #5BC0DE;
+  color: #07AB7C;
+}
+
+.text-color {
+  color: #07AB7C;
 }
