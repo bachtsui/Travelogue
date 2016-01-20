@@ -17,9 +17,10 @@
 </div>
 
 <div class = "container">
+  <h2>Articles</h2>
     <ul>
       <% @user.articles.each do |article| %>
-        <strong><%= link_to article.title, article_path(article.id) %></strong>
+        <li><strong><%= link_to article.title, article_path(article.id) %></strong></li>
         <% if current_user == article.user %>
         	<div class = "button">
             <%= link_to "Edit", edit_article_path(article.id) %>
