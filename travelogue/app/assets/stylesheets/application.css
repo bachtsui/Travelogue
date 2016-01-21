@@ -29,4 +29,11 @@ body { padding-top: 50px; }
 	height: 75px;
 }
 
+.city_photo {
+  	background-repeat: no-repeat;
+  	height: 350px;
+  	max-width: 2000px;
+	background-size: cover;	
+}
+
 
