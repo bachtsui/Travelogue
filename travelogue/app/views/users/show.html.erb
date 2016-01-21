@@ -6,9 +6,9 @@
     <img class="profile_photo" src="<%= @user.profile_photo %>">
   </div>
   <div>
-    <p><span class="context-text">E-mail</span> <span class="accent-text"><%= @user.email %></span></p>
-    <p><span class="context-text">Current City</span> <span class="accent-text"><%= @user.current_city %></span></p>
-    <p><span class="context-text">Join Date</span> <span class="accent-text"><%= @user.created_at.strftime("%B %-d, %Y, at %l:%M%P") %></span></p>
+    <p><span class="context-text">email</span> <span class="accent-text"><%= @user.email %></span></p>
+    <p><span class="context-text">current city</span> <span class="accent-text"><%= @user.current_city %></span></p>
+    <p><span class="context-text">join date</span> <span class="accent-text"><%= @user.created_at.strftime("%B %-d, %Y, at %l:%M%P") %></span></p>
   </div>
   <% if current_user == @user %>
   <div>
@@ -27,7 +27,7 @@
   <% if @user.articles.size > 0 %>
     <% @user.articles.each do |article| %>
     <div class = "container">
-      <h4><strong><%= link_to article.title, article_path(article.id), class: "title"  %></strong></h4>
+      <h4><%= link_to article.title, article_path(article.id), class: 'article_title'%></h4>
       <% if current_user == article.user %>
       <div class = "button">
         <%= link_to "edit", edit_article_path(article.id), class: 'btn btn-light' %>
@@ -36,6 +36,7 @@
         <%= button_to "remove", article_path(article), { method: :delete, data: {confirm: "Are you sure you want to delete '#{article.title}'?"}, class: 'btn btn-light'} %>
       </div></br>
       <% end %>
+      <br><hr>
     </div>
     <% end %>
   <% else %>
