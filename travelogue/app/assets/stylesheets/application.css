@@ -64,6 +64,11 @@ body {
   height: 20px;
 }
 
+.navbar {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 @media (min-width: 760px) {
 
   .navbar-default .navbar-nav > .open > a,
