@@ -19,17 +19,20 @@
 </div>
 
 <div class = "container">
-  <h2 class="text-color">Articles</h2>
-    <ul>
-      <% @user.articles.each do |article| %>
-        <h3 class="text-color"><%= link_to article.title, article_path(article.id), class: "text-color" %></h3>
-        <% if current_user == article.user %>
-        	<div class = "button">
-            <%= link_to "Edit", edit_article_path(article.id) %>
-            <%= button_to "Delete", article, method: :delete %>
-        	</div>
-        <% end %>
+  <h2>Articles</h2>
+  <ul>
+  <% if @user.articles.size > 0 %>
+    <% @user.articles.each do |article| %>
+      <h4><strong><%= link_to article.title, article_path(article.id) %></strong></h4>
+      <% if current_user == article.user %>
+        <div class = "button">
+          <%= link_to "Edit", edit_article_path(article.id) %>
+          <%= button_to "Delete", article, method: :delete %>
+        </div>
       <% end %>
-    </ul>
+    <% end %>
+  <% else %>
+    <h4>This User has not posted any articles</h4>
+  <% end %>
+  </ul>
 </div>
-
