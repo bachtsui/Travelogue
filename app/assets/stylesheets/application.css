@@ -11,10 +11,9 @@
  */
 
 .jumbotron {
-	background-image: url(/assets/sanfrancisco.jpg);
   background-repeat: no-repeat;
   height: 350px;
-  max-width: 1600px;
+  max-width: 100%;
 	background-size: cover;
 }
 
@@ -25,6 +24,13 @@ body {
 ul {
   list-style-type: none;
   color: #7900B5;
+}
+
+.photo_title {
+  height: 100px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .title {
@@ -53,13 +59,6 @@ ul {
 .profile_photo {
 	width: 280px;
 	height: 300px;
-}
-
-.city_photo {
-  background-repeat: no-repeat;
-  height: 350px;
-  max-width: 2000px;
-  background-size: cover; 
 }
 
 .form-horizontal {
