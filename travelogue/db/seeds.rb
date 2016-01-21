@@ -23,7 +23,7 @@ User.create ({
 
 	10.times do
 		new_article = Article.new
-		new_article.title = FFaker::HipsterIpsum.words(rand(8)+2).join(" ")
+		new_article.title = FFaker::HipsterIpsum.words(rand(1)+3).join(" ")
 		new_article.content = FFaker::HipsterIpsum.paragraphs(1+ rand(4)).join("\n")
 		new_article.save
 		new_user.articles.push new_article
