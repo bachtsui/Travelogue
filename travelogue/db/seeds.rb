@@ -1,5 +1,6 @@
 User.destroy_all
 Article.destroy_all
+City.destroy_all
 
 User.create ({
   email: "bagel@isangieri.com",
@@ -9,6 +10,11 @@ User.create ({
   current_city: "Emeryville",
   profile_photo: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Bagel-Plain-Alt.jpg"
 })
+
+City.create ({
+	name: "San Francisco",
+	photo: "/assets/sfshowpage.jpg"
+	})
 
 20.times do
 	user_params = Hash.new

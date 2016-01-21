@@ -1,5 +1,5 @@
 <div class="container">
-	<img class="city_photo" src = "<%= @city.photo %>"
+	<img class="city_photo" src = "<%= @city.photo %>">
 </div>
 
 <div class="container">
@@ -14,7 +14,7 @@
       <li><strong><%= link_to article.title, article_path(article.id) %> - <%= article.created_at.strftime("%B %-d, %Y, at %l:%M%P") %></strong></li>
 		<% end %>
     </ul>
-	<%= button_to "New Post", new_article_path, :method => :get, class: 'btn btn-primary' %>   
+	<%= button_to "New Post", city_new_article_path, :method => :get, class: 'btn btn-primary' %>   
 </div>        	
 
 
