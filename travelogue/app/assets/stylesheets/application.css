@@ -29,6 +29,7 @@ ul {
 
 .title {
   color: #2E2E2E;
+  text-transform: uppercase;
 }
 
 .article_title {
