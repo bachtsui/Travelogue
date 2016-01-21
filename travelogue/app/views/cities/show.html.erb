@@ -1,0 +1,20 @@
+<div class="container">
+	<img class="city_photo" src = "<%= @city.photo %>"
+</div>
+
+<div class="container">
+	<p><%= @city.name %></p>
+</div>
+
+<div class = "container">
+  <h2>Articles</h2>
+	<ul>
+      <% @city.articles.each do |article| %>
+        <li><strong><%= link_to article.title, article_path(article.id) %></strong></li>
+		<% end %>
+    </ul>
+	<%= button_to "New Post", url: /articles/new %>    
+</div>        
+	
+
+
