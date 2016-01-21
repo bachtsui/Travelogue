@@ -30,5 +30,7 @@ Rails.application.routes.draw do
 
   #Routes for Cities
   get '/cities', to: "cities#index", as: "cities"   
-  get '/cities/:id', to: "cities#show", as: "city"  
+  get '/cities/:id', to: "cities#show", as: "city"
+  get "/cities/:id/articles/new", to: "articles#new", as: "city_new_article"
+  post '/cities/:id/articles', to: "articles#create"
 end

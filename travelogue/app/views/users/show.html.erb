@@ -1,38 +1,45 @@
-<div class="container">
+<div class="container" id="profile_info">
   <div>
-   	<h1 class="text-color"><%= @user.first_name %> <%= @user.last_name %></h1>
+   	<h1 class="title"><%= @user.first_name %> <%= @user.last_name %></h1>
   </div>
   <div>
     <img class="profile_photo" src="<%= @user.profile_photo %>">
   </div>
   <div>
-    <p><span>E-mail</span> <span class="text-color"><%= @user.email %></span></p>
-    <p><span>Current City</span> <span class="text-color"><%= @user.current_city %></span></p>
-    <p><span>Join Date</span> <span class="text-color"><%= @user.created_at.strftime("%B %-d, %Y, at %l:%M%P") %></span></p>
+    <p><span class="context-text">email</span> <span class="accent-text"><%= @user.email %></span></p>
+    <p><span class="context-text">current city</span> <span class="accent-text"><%= @user.current_city %></span></p>
+    <p><span class="context-text">join date</span> <span class="accent-text"><%= @user.created_at.strftime("%B %-d, %Y, at %l:%M%P") %></span></p>
   </div>
   <% if current_user == @user %>
-    <div class = "buttons">
-      <%= link_to "Edit", edit_user_path(@user.id) %>
-      <%= button_to "Delete", @user, method: :delete %>
+  <div>
+    <div class = "button">
+      <%= link_to "edit", edit_user_path(@user.id), class: 'btn btn-light' %>
     </div>
+    <div class = "button">
+      <%= button_to "remove", @user, method: :delete, class: 'btn btn-light'  %>
+    </div>
+  </div>
   <% end %>
 </div>
 
 <div class = "container">
   <h2>Articles</h2>
-  <ul>
   <% if @user.articles.size > 0 %>
     <% @user.articles.each do |article| %>
-      <h4><strong><%= link_to article.title, article_path(article.id) %></strong></h4>
+    <div class = "container">
+      <h4><%= link_to article.title, article_path(article.id), class: 'article_title'%></h4>
       <% if current_user == article.user %>
-        <div class = "button">
-          <%= link_to "Edit", edit_article_path(article.id), class: 'btn btn-primary' %>
-          <%= button_to "Delete", article_path(article), { method: :delete, data: {confirm: "Are you sure you want to delete '#{article.title}'?"}, class: 'btn btn-danger'} %>
-        </div>
+      <div class = "button">
+        <%= link_to "edit", edit_article_path(article.id), class: 'btn btn-light' %>
+      </div>
+      <div class = "button">
+        <%= button_to "remove", article_path(article), { method: :delete, data: {confirm: "Are you sure you want to delete '#{article.title}'?"}, class: 'btn btn-light'} %>
+      </div></br>
       <% end %>
+      <br><hr>
+    </div>
     <% end %>
   <% else %>
     <h4>This User has not posted any articles</h4>
   <% end %>
-  </ul>
 </div>

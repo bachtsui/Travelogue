@@ -18,16 +18,47 @@
 	background-size: cover;
 }
 
-nav {
-}
-
 body { 
   padding-top: 50px;
+}
+
+ul {
+  list-style-type: none;
+  color: #7900B5;
+}
+
+.title {
+  color: #2E2E2E;
+}
+
+.article_title {
+  color: #2E2E2E;
+  font-weight: normal;
+}
+
+.accent-text {
+  color: #7900B5;
+  font-weight: bold;
+}
+
+.context-text {
+  color: #7F7777;
+}
+
+.center-content {
+  margin: 0 auto;
 }
 
 .profile_photo {
 	width: 280px;
 	height: 300px;
+}
+
+.city_photo {
+  background-repeat: no-repeat;
+  height: 350px;
+  max-width: 2000px;
+  background-size: cover; 
 }
 
 .form-horizontal {
@@ -38,18 +69,54 @@ body {
 }
 
 .control-label {
-  color: #07AB7C;
+  color: #7900B5;
 }
 
-.city_photo {
-	background-repeat: no-repeat;
-	height: 350px;
-	max-width: 2000px;
-  background-size: cover;	
+.button {
+  float: left;
+  display: inline-block;
 }
 
-.text-color {
-  color: #07AB7C;
+.btn {
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin: 10px 10px 0 0;
+}
+ 
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+ 
+.btn-purple {
+    background: #7900B5;
+    color: #ffffff;
+}
+ 
+.btn-purple:hover, .btn-purple:focus, .btn-purple:active, .btn-purple.active, .open > .dropdown-toggle.btn-purple {
+    background: #C878F0;
+    color: #ffffff;
+}
+ 
+.btn-purple:active, .btn-purple.active {
+    background: #D4D4D4;
+    box-shadow: none;
+}
+
+.btn-light {
+    background: #C878F0;
+    color: #ffffff;
+}
+ 
+.btn-light:hover, .btn-light:focus, .btn-light:active, .btn-light.active, .open > .dropdown-toggle.btn-light {
+    background: #7900B5;
+    color: #ffffff;
+}
+ 
+.btn-light:active, .btn-light.active {
+    background: #D4D4D4;
+    box-shadow: none;
 }
 
 .navbar-default .navbar-nav > .open > a,
@@ -74,6 +141,14 @@ body {
 .navbar {
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.navbar-right {
+ padding-right: 30px;
+}
+
+.navbar-header {
+ padding-left: 30px;
 }
 
 @media (min-width: 760px) {
