@@ -1,44 +1,44 @@
-<div clas="col-md-6 offset-md-3"
-  <div class="container">
-    <div>
-     	<h1 class="title"><%= @user.first_name %> <%= @user.last_name %></h1>
-    </div>
-    <div>
-      <img class="profile_photo" src="<%= @user.profile_photo %>">
-    </div>
-    <div>
-      <p><span class="context-text">E-mail</span> <span class="accent-text"><%= @user.email %></span></p>
-      <p><span class="context-text">Current City</span> <span class="accent-text"><%= @user.current_city %></span></p>
-      <p><span class="context-text">Join Date</span> <span class="accent-text"><%= @user.created_at.strftime("%B %-d, %Y, at %l:%M%P") %></span></p>
-    </div>
-    <% if current_user == @user %>
-      <div class = "button">
-        <%= link_to "Edit", edit_user_path(@user.id) %>
-      </div>
-      <div class = "button">
-        <%= button_to "remove", @user, method: :delete, class: 'btn btn-light'  %>
-      </div>
-    <% end %>
+<div class="container" id="profile_info">
+  <div>
+   	<h1 class="title"><%= @user.first_name %> <%= @user.last_name %></h1>
   </div>
+  <div>
+    <img class="profile_photo" src="<%= @user.profile_photo %>">
+  </div>
+  <div>
+    <p><span class="context-text">E-mail</span> <span class="accent-text"><%= @user.email %></span></p>
+    <p><span class="context-text">Current City</span> <span class="accent-text"><%= @user.current_city %></span></p>
+    <p><span class="context-text">Join Date</span> <span class="accent-text"><%= @user.created_at.strftime("%B %-d, %Y, at %l:%M%P") %></span></p>
+  </div>
+  <% if current_user == @user %>
+  <div>
+    <div class = "button">
+      <%= link_to "edit", edit_user_path(@user.id), class: 'btn btn-light' %>
+    </div>
+    <div class = "button">
+      <%= button_to "remove", @user, method: :delete, class: 'btn btn-light'  %>
+    </div>
+  </div>
+  <% end %>
+</div>
 
-  <div class = "container">
-    <h2>Articles</h2>
-    <% if @user.articles.size > 0 %>
-      <% @user.articles.each do |article| %>
-      <div class = "container">
-        <h4><strong><%= link_to article.title, article_path(article.id), class: "title"  %></strong></h4>
-        <% if current_user == article.user %>
-          <div class = "button">
-            <%= link_to "edit", edit_article_path(article.id), class: 'btn btn-light' %>
-          </div>
-          <div class = "button">
-            <%= button_to "remove", article_path(article), { method: :delete, data: {confirm: "Are you sure you want to delete '#{article.title}'?"}, class: 'btn btn-light'} %>
-          </div></br>
-        <% end %>
+<div class = "container">
+  <h2>Articles</h2>
+  <% if @user.articles.size > 0 %>
+    <% @user.articles.each do |article| %>
+    <div class = "container">
+      <h4><strong><%= link_to article.title, article_path(article.id), class: "title"  %></strong></h4>
+      <% if current_user == article.user %>
+      <div class = "button">
+        <%= link_to "edit", edit_article_path(article.id), class: 'btn btn-light' %>
       </div>
+      <div class = "button">
+        <%= button_to "remove", article_path(article), { method: :delete, data: {confirm: "Are you sure you want to delete '#{article.title}'?"}, class: 'btn btn-light'} %>
+      </div></br>
       <% end %>
-    <% else %>
-      <h4>This User has not posted any articles</h4>
+    </div>
     <% end %>
-  </div>
+  <% else %>
+    <h4>This User has not posted any articles</h4>
+  <% end %>
 </div>

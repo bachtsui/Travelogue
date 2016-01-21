@@ -18,9 +18,6 @@
 	background-size: cover;
 }
 
-nav {
-}
-
 body { 
   padding-top: 50px;
 }
@@ -36,6 +33,10 @@ body {
 
 .context-text {
   color: #7F7777;
+}
+
+.center-content {
+  margin: 0 auto;
 }
 
 .profile_photo {
@@ -130,6 +131,14 @@ body {
 .navbar {
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.navbar-right {
+ padding-right: 30px;
+}
+
+.navbar-header {
+ padding-left: 30px;
 }
 
 @media (min-width: 760px) {
