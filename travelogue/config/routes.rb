@@ -27,4 +27,8 @@ Rails.application.routes.draw do
   get '/articles/:id/edit', to: 'articles#edit', as: "edit_article"
   patch '/articles/:id', to: 'articles#update'
   delete '/articles/:id', to: 'articles#destroy'
+
+  #Routes for Cities
+  get '/cities', to: "cities#index", as: "cities"   
+  get '/cities/:id', to: "cities#show", as: "city"  
 end
