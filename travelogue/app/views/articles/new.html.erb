@@ -1,5 +1,6 @@
 <h1>Create Article</h1>
 <%= form_for @article do |f| %>
+	<%= f.hidden_field :city_id, :value => current_city[:id] %>
   <div>
     <%= f.text_field :title, placeholder: "Title" %>
   </div>
