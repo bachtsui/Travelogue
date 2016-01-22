@@ -1,6 +1,6 @@
-<div class="jumbotron" style="background-image: url(/assets/sfshowpage.jpg)">
-  <div class="photo_title"><%= @city.name %>
-  </div>
+
+<div class="jumbotron" style="background-image: url(<%= @city.photo %>); background-size: 100%;">
+  <div class="photo_title"><%= @city.name %></div>
 </div>
 
 <div class = "container">
@@ -24,7 +24,7 @@
     </div>
     <% end %>
   <% else %>
-    <h4>This User has not posted any articles</h4>
+    <h4>No one has written any articles about <%=@city.name%> yet...</h4>
   <% end %>   
 </div> 
 
