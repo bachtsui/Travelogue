@@ -39,6 +39,7 @@ City.create ({
 		new_article = Article.new
 		new_article.title = FFaker::HipsterIpsum.words(rand(1)+3).join(" ")
 		new_article.content = FFaker::HipsterIpsum.paragraphs(1+ rand(4)).join("\n")
+    new_article.city_id = City.first[:id]
 		new_article.save
 		new_user.articles.push new_article
 	end
