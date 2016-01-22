@@ -33,4 +33,6 @@ Rails.application.routes.draw do
   get '/cities/:id', to: "cities#show", as: "city"
   get "/cities/:id/articles/new", to: "articles#new", as: "city_new_article"
   post '/cities/:id/articles', to: "articles#create"
+  get "/cities/:name/articles/:id", to: "articles#show", as: "city_article"
+
 end
