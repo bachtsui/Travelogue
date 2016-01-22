@@ -1,20 +1,31 @@
-<div class="container">
-	<img class="city_photo" src = "<%= @city.photo %>">
-</div>
 
-<div class="container">
-	<p><%= @city.name %></p>
+<div class="jumbotron" style="background-image: url(<%= @city.photo %>); background-size: 100%;">
+  <div class="photo_title"><%= @city.name %></div>
 </div>
 
 <div class = "container">
-  <h2>Articles</h2>
-	<ul>
-      <% @city.articles.order(created_at: :desc).each do |article| %>
- 		
-      <li><strong><%= link_to article.title, article_path(article.id) %> - <%= article.created_at.strftime("%B %-d, %Y, at %l:%M%P") %></strong></li>
-		<% end %>
-    </ul>
-	<%= button_to "New Post", city_new_article_path, :method => :get, class: 'btn btn-primary' %>   
-</div>        	
+  <div>
+  <h2 class="title">Articles</h2>
+  <%= button_to "new article", city_new_article_path, :method => :get, class: 'btn btn-purple' %>
+  </div><hr>
+  <% if @city.articles.size > 0 %>
+    <% @city.articles.order(created_at: :desc).each do |article| %>
+    <div class = "container">
+      <h4><%= link_to article.title, article_path(article.id), class: 'title accent-text'%><br><br>written by <%=link_to "#{(User.find_by_id(article.user_id)).first_name} #{(User.find_by_id(article.user_id)).last_name}", user_path(article.user_id), class: "accent-text" %> on <%= article.created_at.strftime("%B %-d, %Y, at %l:%M%P") %></span></h4>
+      <% if current_user == article.user %>
+      <div class = "button">
+        <%= link_to "edit", edit_article_path(article.id), class: 'btn btn-light' %>
+      </div>
+      <div class = "button">
+        <%= button_to "remove", article_path(article), { method: :delete, data: {confirm: "Are you sure you want to delete '#{article.title}'?"}, class: 'btn btn-light'} %>
+      </div></br>
+      <% end %>
+      <br><hr>
+    </div>
+    <% end %>
+  <% else %>
+    <h4>No one has written any articles about <%=@city.name%> yet...</h4>
+  <% end %>   
+</div> 
 
 
