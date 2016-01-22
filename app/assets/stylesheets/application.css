@@ -51,8 +51,22 @@ ul {
   opacity: 0;
 }
 
+.city_show_title_static {
+  font-size: 50px;
+  text-transform: uppercase;
+  color: #fff;
+  position: relative;
+  top: -300px;
+}
+
 .city_show_title:hover {
   opacity: .99;
+  text-decoration: none;
+
+} 
+
+a:-webkit-any-link {
+  text-decoration: none;
 }
 
 #notice {
