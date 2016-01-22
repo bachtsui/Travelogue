@@ -18,6 +18,20 @@
 	background-size: cover;
 }
 
+.splash {
+  padding: 0px;
+  margin: 0px;
+}
+.splash_photo {
+  width: 100%;
+  max-height: 350px;
+}
+
+.box {
+  max-width: 350px;
+  max-height: 350px;
+}
+
 body { 
   padding-top: 50px;
 }
@@ -57,7 +71,8 @@ ul {
 .city_photo {
   background-repeat: no-repeat;
   height: 350px;
-  max-width: 2000px;
+  width: 100%;
+  /*max-width: 2000px;*/
   background-size: cover; 
 }
 
