@@ -11,11 +11,24 @@
  */
 
 .jumbotron {
-	background-image: url(/assets/sanfrancisco.jpg);
   background-repeat: no-repeat;
   height: 350px;
-  max-width: 1600px;
+  max-width: 1920px;
 	background-size: cover;
+}
+
+.splash {
+  padding: 0px;
+  margin: 0px;
+}
+.splash_photo {
+  width: 100%;
+  max-height: 350px;
+}
+
+.box {
+  max-width: 350px;
+  max-height: 350px;
 }
 
 body { 
@@ -27,8 +40,20 @@ ul {
   color: #7900B5;
 }
 
+.photo_title {
+  font-size: 50px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translatey(-50%);
+  transform: translatex(0%);
+}
+
 .title {
   color: #2E2E2E;
+  text-transform: uppercase;
 }
 
 .article_title {
@@ -52,13 +77,6 @@ ul {
 .profile_photo {
 	width: 280px;
 	height: 300px;
-}
-
-.city_photo {
-  background-repeat: no-repeat;
-  height: 350px;
-  max-width: 2000px;
-  background-size: cover; 
 }
 
 .form-horizontal {

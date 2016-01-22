@@ -1,9 +1,18 @@
-<h3><%= @article.title %></h3>
-<p>Author: <%=link_to "#{@article.user.first_name} #{@article.user.last_name}", user_path(@article.user.id) %></p>
-<p><%= @article.content %></p>
+<h3 class="title"><%= @article.title %></h3>
+<div>
+  <div class="button"><p><span class="context-text">author</span> <span class="accent-text"><%=link_to "#{@article.user.first_name} #{@article.user.last_name}", user_path(@article.user.id), class: "accent-text" %></span> <span class="context-text">writing</span> <span class="accent-text"><%=link_to "#{@article.city.name}", city_path(@article.city.id), class: "accent-text" %></span></p>
+  </div><br><hr>
+  <p><%= @article.content %></p>
+</div><br><hr>
 
 <% if current_user == @article.user %>
-	<p><%= link_to "Edit", edit_article_path(@article.id), class: 'btn btn-primary' %>
-	<%= button_to "Delete", article_path(@article),
-	 { method: :delete, data: { confirm: "Are you sure you want to delete '#{@article.title}'?"}, class: 'btn btn-danger' } %></p>
+   <div>
+    <div class = "button">
+      <%= link_to "Edit", edit_article_path(@article.id), class: 'btn btn-purple' %>
+    </div>
+    <div class = "button">
+      <%= button_to "Delete", article_path(@article),
+   { method: :delete, data: { confirm: "Are you sure you want to delete '#{@article.title}'?"}, class: 'btn btn-purple' } %>
+    </div>
+  </div>
 <% end %>
