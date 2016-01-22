@@ -1,5 +1,7 @@
 <h1 class="title">Create Article</h1>
 <%= form_for @article do |f| %>
+   <%= f.hidden_field :city_id, :value => current_city[:id] %>
+   
    <%= f.label :title, "title", class: " control-label" %>
   <br>	
   <%= f.text_field :title, class: "form-control" %>
