@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/users/:id/edit", to: "users#edit", as: "edit_user"
   patch "/users/:id", to: "users#update"
   delete "/users/:id", to: "users#destroy"
+  get "/users/:last_name/articles/:id", to: "articles#show", as: "user_article"
 
   #Routes for login form, logging in and logging out
   get "/login", to: "sessions#new", as: "new_session"
