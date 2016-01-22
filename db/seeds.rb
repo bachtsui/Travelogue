@@ -14,7 +14,15 @@ User.create ({
 City.create ({
 	name: "San Francisco",
 	photo: "/assets/sfshowpage.jpg"
-	})
+})
+City.create ({
+	name: "London",
+	photo: "/assets/london.jpg"
+})
+City.create ({
+	name: "Gibraltar",
+	photo: "/assets/gibraltar.jpg"
+})
 
 20.times do
 	user_params = Hash.new
