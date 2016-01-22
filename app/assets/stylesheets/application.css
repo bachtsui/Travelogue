@@ -40,6 +40,10 @@ ul {
   color: #7900B5;
 }
 
+#notice {
+  margin: 50px;
+}
+
 .photo_title {
   font-size: 50px;
   color: #fff;
@@ -84,6 +88,7 @@ ul {
 }
 
 .form-control {
+  /*save for future edits*/
 }
 
 .control-label {
