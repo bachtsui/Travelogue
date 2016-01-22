@@ -1,4 +1,4 @@
-# Travelouge
+# Travelogue
 
 Travelouge is community user driven blog website used to share tips, experience, and stories about their favorite locations around the world!
 
@@ -154,10 +154,10 @@ This application is deployed on heroku [here](https://travelogueone.herokuapp.co
 4. Post Title must be within 200 Characters
 
 ### Contributers
-[Is Angieri](https://github.com/isangieri)
-[Colbert Tse](https://github.com/trebloc)
-[Alex Rao](https://github.com/alexpsu)
-[Doug Tsui](https://github.com/bachtsui)
+*[Is Angieri](https://github.com/isangieri)__
+*[Colbert Tse](https://github.com/trebloc)__
+*[Alex Rao](https://github.com/alexpsu)__
+*[Doug Tsui](https://github.com/bachtsui)
 
 
 
