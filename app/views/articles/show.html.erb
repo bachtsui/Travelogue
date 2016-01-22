@@ -1,8 +1,9 @@
 <h3 class="title"><%= @article.title %></h3>
 <div>
-  <p><span class="context-text">author</span> <span class="accent-text"><%=link_to "#{@article.user.first_name} #{@article.user.last_name}", user_path(@article.user.id), class: "accent-text" %></span></p>
+  <div class="button"><p><span class="context-text">author</span> <span class="accent-text"><%=link_to "#{@article.user.first_name} #{@article.user.last_name}", user_path(@article.user.id), class: "accent-text" %></span> <span class="context-text">writing</span> <span class="accent-text"><%=link_to "#{@article.city.name}", city_path(@article.city.id), class: "accent-text" %></span></p>
+  </div><br><hr>
   <p><%= @article.content %></p>
-</div>
+</div><br><hr>
 
 <% if current_user == @article.user %>
    <div>
