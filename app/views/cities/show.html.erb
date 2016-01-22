@@ -11,7 +11,7 @@
   <% if @city.articles.size > 0 %>
     <% @city.articles.order(created_at: :desc).each do |article| %>
     <div class = "container">
-      <h4><%= link_to article.title, article_path(article.id), class: 'title accent-text'%><br><br>written by <%=link_to "#{(User.find_by_id(article.user_id)).first_name} #{(User.find_by_id(article.user_id)).last_name}", user_path(article.user_id), class: "accent-text" %> on <%= article.created_at.strftime("%B %-d, %Y, at %l:%M%P") %></span></h4>
+      <h4><%= link_to article.title, city_article_path(@city.name, article.id), class: 'title accent-text'%><br><br>written by <%=link_to "#{(User.find_by_id(article.user_id)).first_name} #{(User.find_by_id(article.user_id)).last_name}", user_path(article.user_id), class: "accent-text" %> on <%= article.created_at.strftime("%B %-d, %Y, at %l:%M%P") %></span></h4>
       <% if current_user == article.user %>
       <div class = "button">
         <%= link_to "edit", edit_article_path(article.id), class: 'btn btn-light' %>
