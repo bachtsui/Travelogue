@@ -153,6 +153,12 @@ This application is deployed on heroku [here](https://travelogueone.herokuapp.co
 3. Cannot sign up with an existing email address
 4. Post Title must be within 200 Characters
 
+### Contributers
+[Is Angieri](https://github.com/isangieri)
+[Colbert Tse](https://github.com/trebloc)
+[Alex Rao](https://github.com/alexpsu)
+[Doug Tsui](https://github.com/bachtsui)
+
 
 
 
