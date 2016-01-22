@@ -1,3 +1,5 @@
+include ActionView::Helpers
+
 User.destroy_all
 Article.destroy_all
 City.destroy_all
@@ -11,17 +13,17 @@ User.create ({
   profile_photo: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Bagel-Plain-Alt.jpg"
 })
 
-City.create ({
+sf = City.create ({
 	name: "San Francisco",
-	photo: "/assets/sfshowpage.jpg"
+	photo: image_url("sfshowpage.jpg")
 })
-City.create ({
+ln = City.create ({
 	name: "London",
-	photo: "/assets/london.jpg"
+	photo: image_url("london.jpg")
 })
-City.create ({
+gb = City.create ({
 	name: "Gibraltar",
-	photo: "/assets/gibraltar.jpg"
+	photo: image_url("gibraltar.jpg")
 })
 
 20.times do
@@ -35,12 +37,32 @@ City.create ({
 
 	new_user = User.create(user_params)
 
-	10.times do
+	3.times do
 		new_article = Article.new
 		new_article.title = FFaker::HipsterIpsum.words(rand(1)+3).join(" ")
 		new_article.content = FFaker::HipsterIpsum.paragraphs(1+ rand(4)).join("\n")
-    new_article.city_id = City.first[:id]
+    	# new_article.city_id = City.first[:id]
 		new_article.save
 		new_user.articles.push new_article
+		sf.articles.push new_article
 	end
+
+	3.times do
+		new_article = Article.new
+		new_article.title = FFaker::HipsterIpsum.words(rand(1)+3).join(" ")
+		new_article.content = FFaker::HipsterIpsum.paragraphs(1+ rand(4)).join("\n")
+		new_article.save
+		new_user.articles.push new_article
+		ln.articles.push new_article
+	end
+
+	3.times do
+		new_article = Article.new
+		new_article.title = FFaker::HipsterIpsum.words(rand(1)+3).join(" ")
+		new_article.content = FFaker::HipsterIpsum.paragraphs(1+ rand(4)).join("\n")
+		new_article.save
+		new_user.articles.push new_article
+		gb.articles.push new_article
+	end
+
 end
