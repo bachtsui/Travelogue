@@ -1,11 +1,11 @@
-<h1>Create Article</h1>
+<h1 class="title">Create Article</h1>
 <%= form_for @article do |f| %>
-	<%= f.hidden_field :city_id, :value => current_city[:id] %>
-  <div>
-    <%= f.text_field :title, placeholder: "Title" %>
-  </div>
-  <div>
-  <%= f.text_field :content, placeholder: "Content" %>
-  </div>
-  <%= f.submit "Create" %>
+   <%= f.label :title, "title", class: " control-label" %>
+  <br>	
+  <%= f.text_field :title, class: "form-control" %>
+  <br>
+
+  <%= f.label :content, "content", class: " control-label" %>
+  <%= f.text_area :content, size: "60x15", class: "form-control" %>
+  <%= f.submit "Create Article", class: "btn btn-default btn-purple center-bl form-control" %>
 <% end %>
