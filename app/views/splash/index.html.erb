@@ -1,5 +1,7 @@
-<div class="container">
-<div class="jumbotron">
 
-</div>
-</div>
+<% @cities.each do |city| %>
+  <p class="col-lrg-4 col-md-6">
+  <div><a href="<%=city_path(city.id)%>"><img class="splash_photo img-responsive center-block" src="<%= city.photo %>"></a>
+  </div>
+	</p>	
+<% end %>
