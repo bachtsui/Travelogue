@@ -1,6 +1,6 @@
 # Travelogue
 
-Travelouge is community user driven blog website used to share tips, experience, and stories about their favorite locations around the world!
+Travelogue is community user driven blog website used to share tips, experience, and stories about their favorite locations around the world!
 
 ### Sprints
 **Sprint 1: Create a website with basic user sign up capabilities.**
